@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Pristine Cleaning</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/index-31ea6296.css">
+</head>
+<body class="flex flex-col min-h-screen h-full">
+
+  <!-- Header -->
+  <header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
+    <div class="flex justify-between items-center px-8">
+      <div class="flex items-center space-x-3">
+        <img src="/assets/Logo-40452def.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white" />
+        <span class="text-white text-3xl font-extrabold tracking-wide leading-tight">Pristine<br>Cleaning</span>
+      </div>
+      <nav>
+        <ul class="flex space-x-6 text-white text-lg">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li><a href="/#services" class="hover:underline">Services</a></li>
+          <li><a href="/about.html" class="hover:underline">About</a></li>
+          <li><a href="/contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="text-white text-sm text-right">
+        <p>Call us: (795)-317-0689</p>
+        <p>Email: pristinecleanmhk@gmail.com</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <!-- Contact Section -->
+    <section class="py-16 bg-white mb-10" data-aos="fade-up">
+      <div class="container mx-auto max-w-2xl px-4">
+        <h2 class="text-3xl font-semibold text-blue-600 text-center">Contact Us</h2>
+        <form id="contactForm" action="https://formspree.io/f/xyzwpprw" method="POST" class="mt-8 space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all">
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        <div id="contactSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">
+          Thank you! Your message has been sent successfully.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 p-5 text-white text-center mt-10">
+    <p>&copy; 2023 Pristine Cleaning. All rights reserved.</p>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccess');
+  
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      console.log("Form submitted"); // Debugging line
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+  
+      const formData = new FormData(contactForm);
+  
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => {
+          if (response.ok) {
+            setTimeout(() => {
+              contactSuccess.classList.remove('hidden');
+              contactForm.reset();
+              contactForm.style.display = 'none';
+            }, 500); // Delay added to show the message before redirecting
+          } else {
+            alert('There was an error sending your message. Please try again later.');
+          }
+        })
+        .catch(error => {
+          alert('Network error. Please try again later.');
+          console.log("Error:", error); // Debugging line
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Message";
+        });
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
+
+
+
+
