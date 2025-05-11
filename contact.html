@@ -12,20 +12,20 @@
 
   <!-- Header -->
   <header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
-    <div class="flex justify-between items-center px-8">
+    <div class="flex justify-between items-center px-8 sm:px-4">
       <div class="flex items-center space-x-3">
         <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white" />
         <span class="text-white text-3xl font-extrabold tracking-wide leading-tight">Pristine<br>Cleaning</span>
       </div>
       <nav>
-        <ul class="flex space-x-6 text-white text-lg">
+        <ul class="flex space-x-6 text-white text-lg sm:flex-col sm:space-x-0 sm:space-y-4">
           <li><a href="/" class="hover:underline">Home</a></li>
           <li><a href="/#services" class="hover:underline">Services</a></li>
           <li><a href="/about.html" class="hover:underline">About</a></li>
           <li><a href="/contact.html" class="hover:underline">Contact</a></li>
         </ul>
       </nav>
-      <div class="text-white text-sm text-right">
+      <div class="text-white text-sm text-right sm:text-center sm:mt-4">
         <p>Call us: (795)-317-0689</p>
         <p>Email: pristinecleanmhk@gmail.com</p>
       </div>
@@ -90,9 +90,13 @@
       const formData = new FormData(contactForm);
   
       fetch(contactForm.action, {
-        method: 'POST',
-        body: formData
-      })
+  method: 'POST',
+  body: formData,
+  headers: {
+    'Accept': 'application/json'
+  }
+})
+
         .then(response => {
           if (response.ok) {
             setTimeout(() => {
@@ -114,11 +118,9 @@
         });
     });
   </script>
-  
-  
-  
 </body>
 </html>
+
 
 
 

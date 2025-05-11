@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Pristine Cleaning</title>
+  <title>About Us - Pristine Cleaning</title>
   <link href="/src/index.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -33,33 +33,37 @@
 
   <!-- Main Content -->
   <main class="flex-grow">
-    <!-- Contact Section -->
     <section class="py-16 bg-white" data-aos="fade-up">
-      <div class="container mx-auto max-w-2xl px-4">
-        <h2 class="text-3xl font-semibold text-blue-600 text-center">Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/xyzwpprw" method="POST" class="mt-8 space-y-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-            <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-            <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
-            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all">
-              Send Message
-            </button>
-          </div>
-        </form>
+      <div class="container mx-auto px-4 text-gray-800 max-w-screen-md">
+        <h2 class="text-4xl font-bold text-blue-600 text-center mb-10">About Pristine Cleaning</h2>
 
-        <!-- Success Message -->
-        <div id="contactSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">
-          Thank you! Your message has been sent successfully.
+        <div class="space-y-6 text-lg leading-relaxed">
+          <p>
+            At <strong>Pristine Cleaning</strong>, we believe that a spotless environment is more than just a luxury—it's a lifestyle.
+            Founded with a commitment to excellence and a passion for detail, we serve our local community with top-tier
+            window cleaning and car detailing services that consistently exceed expectations.
+          </p>
+
+          <p>
+            Our team is made up of hard-working professionals who are dedicated to delivering not only great results but
+            a great experience. Whether we’re making your home’s windows gleam or turning your car into a showroom beauty,
+            we treat every job with care and pride.
+          </p>
+
+          <p>
+            What sets us apart? Attention to detail, prompt service, and honest communication. We believe in building long-term
+            relationships with our customers—because when you look good, we feel good.
+          </p>
+
+          <p>
+            Thank you for considering Pristine Cleaning. We can’t wait to serve you.
+          </p>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/contact.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
+            Get in Touch
+          </a>
         </div>
       </div>
     </section>
@@ -72,43 +76,11 @@
 
   <script>
     AOS.init({ duration: 1000, once: true });
-
-    const contactForm = document.getElementById('contactForm');
-    const contactSuccess = document.getElementById('contactSuccess');
-
-    contactForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
-
-      const formData = new FormData(contactForm);
-
-      fetch(contactForm.action, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        if (response.ok) {
-          contactSuccess.classList.remove('hidden');
-          contactForm.reset();
-          contactForm.style.display = 'none';
-        } else {
-          alert('There was an error sending your message. Please try again later.');
-        }
-      })
-      .catch(() => {
-        alert('Network error. Please try again later.');
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send Message";
-      });
-    });
   </script>
 </body>
 </html>
+
+
 
 
 
