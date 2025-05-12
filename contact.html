@@ -12,25 +12,42 @@
 
   <!-- Header -->
   <header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
-    <div class="flex justify-between items-center px-8 sm:px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-0">
+      
+      <!-- Logo and Company Name -->
       <div class="flex items-center space-x-3">
-        <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white" />
-        <span class="text-white text-3xl font-extrabold tracking-wide leading-tight">Pristine<br>Cleaning</span>
+        <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white">
+        <span class="text-white text-2xl sm:text-3xl font-extrabold leading-tight">Pristine<br>Cleaning</span>
       </div>
-      <nav>
-        <ul class="flex space-x-6 text-white text-lg sm:flex-col sm:space-x-0 sm:space-y-4">
-          <li><a href="/" class="hover:underline">Home</a></li>
-          <li><a href="/#services" class="hover:underline">Services</a></li>
-          <li><a href="/about.html" class="hover:underline">About</a></li>
-          <li><a href="/contact.html" class="hover:underline">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="text-white text-sm text-right sm:text-center sm:mt-4">
+
+      <!-- Contact Info -->
+      <div class="text-white text-sm text-center md:text-right">
         <p>Call us: (795)-317-0689</p>
         <p>Email: pristinecleanmhk@gmail.com</p>
       </div>
+
+      <!-- Mobile nav toggle -->
+      <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none order-3 md:order-none">
+        ☰
+      </button>
+
+      <!-- Navigation -->
+      <nav id="mobileNav" class="hidden md:flex flex-col md:flex-row text-white text-lg space-y-4 md:space-y-0 md:space-x-6 text-center md:text-left order-4 md:order-none">
+        <a href="/index.html#services" class="hover:underline">Services</a>
+        <a href="/about.html" class="hover:underline">About</a>
+        <a href="/contact.html" class="hover:underline">Contact</a>
+      </nav>
     </div>
   </header>
+
+  <script>
+    // Mobile nav toggle functionality
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Main Content -->
   <main class="flex-grow">
@@ -76,50 +93,57 @@
       duration: 1000,
       once: true,
     });
-  
+
     const contactForm = document.getElementById('contactForm');
     const contactSuccess = document.getElementById('contactSuccess');
-  
+
     contactForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      console.log("Form submitted"); // Debugging line
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
-  
-      const formData = new FormData(contactForm);
-  
-      fetch(contactForm.action, {
-  method: 'POST',
-  body: formData,
-  headers: {
-    'Accept': 'application/json'
-  }
-})
 
-        .then(response => {
-          if (response.ok) {
-            setTimeout(() => {
-              contactSuccess.classList.remove('hidden');
-              contactForm.reset();
-              contactForm.style.display = 'none';
-            }, 500); // Delay added to show the message before redirecting
-          } else {
-            alert('There was an error sending your message. Please try again later.');
-          }
-        })
-        .catch(error => {
-          alert('Network error. Please try again later.');
-          console.log("Error:", error); // Debugging line
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
-        });
+      const formData = new FormData(contactForm);
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          setTimeout(() => {
+            contactSuccess.classList.remove('hidden');
+            contactForm.reset();
+            contactForm.style.display = 'none';
+          }, 500);
+        } else {
+          alert('There was an error sending your message. Please try again later.');
+        }
+      })
+      .catch(error => {
+        alert('Network error. Please try again later.');
+        console.error("Error:", error);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      });
     });
   </script>
+  <script>   
+    AOS.init({
+        duration: 600, // Animation duration in ms
+        once: true, // Run animation only once
+    });
+
+    window.onload = function() {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+    };
+</script>
 </body>
 </html>
+
 
 
 
