@@ -5,7 +5,8 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "vite preview"
+        "serve": "vite preview",
+        "postbuild": "copy _redirects dist\\_redirects"
     },
     "dependencies": {
         "@tailwindcss/postcss": "^4.1.5",
