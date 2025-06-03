@@ -7,52 +7,54 @@
   <link href="/src/index.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="flex flex-col min-h-screen h-full">
-
   <!-- Header -->
-<header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-0">
-    
-    <!-- Logo and Company Name -->
-    <div class="flex items-center space-x-3">
-      <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white">
-      <span class="text-white text-2xl sm:text-3xl font-extrabold leading-tight">Pristine<br>Cleaning</span>
+  <header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-0">
+      <!-- Logo and Company Name -->
+      <div class="flex items-center space-x-3">
+        <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white">
+        <span class="text-white text-2xl sm:text-3xl font-extrabold leading-tight">Pristine<br>Cleaning</span>
+      </div>
+      <!-- Navigation + Socials (aligned right) -->
+      <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+        <nav id="mobileNav" class="hidden md:flex flex-row text-white text-lg space-x-6 text-center md:text-left">
+          <a href="index.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Home</a>
+          <a href="/about.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">About</a>
+          <a href="/contact.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Contact</a>
+          <a href="before-after-more.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Photos</a>
+        </nav>
+        <!-- Social Media Links -->
+        <div class="flex space-x-4 ml-0 md:ml-4">
+          <a href="https://www.tiktok.com/@pristinecleaning_mhk" target="_blank" aria-label="TikTok" class="text-white hover:text-blue-200 text-2xl">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/pristinecleaning.mhk/?igsg=ZWMyaXZ3M2gxbWRI#" target="_blank" aria-label="Instagram" class="text-white hover:text-blue-200 text-2xl">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav toggle -->
+      <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none order-3 md:order-none">
+        ☰
+      </button>
     </div>
-
-    <!-- Contact Info -->
-    <div class="text-white text-sm text-center md:text-right">
-      <p>Call us: (785)-317-0689</p>
-      <p>Email: pristinecleanmhk@gmail.com</p>
-    </div>
-
-    <!-- Mobile nav toggle -->
-    <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none order-3 md:order-none">
-      ☰
-    </button>
-
-    <!-- Navigation -->
-    <nav id="mobileNav" class="hidden md:flex flex-col md:flex-row text-white text-lg space-y-4 md:space-y-0 md:space-x-6 text-center md:text-left order-4 md:order-none">
-      <a href="index.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Home</a>
-      <a href="/about.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">About</a>
-      <a href="/contact.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<script>
-  // Toggle mobile navigation visibility
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileNav');
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-
+  </header>
+  <script>
+    // Toggle mobile navigation visibility
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileNav');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
   <!-- Main Content -->
   <main class="flex-grow">
     <!-- Contact Section -->
@@ -78,7 +80,6 @@
             </button>
           </div>
         </form>
-
         <!-- Success Message -->
         <div id="contactSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">
           Thank you! Your message has been sent successfully.
@@ -86,29 +87,23 @@
       </div>
     </section>
   </main>
-
   <!-- Footer -->
   <footer class="bg-blue-600 p-5 text-white text-center mt-10">
     <p>&copy; 2023 Pristine Cleaning. All rights reserved.</p>
   </footer>
-
   <script>
     AOS.init({
       duration: 1000,
       once: true,
     });
-
     const contactForm = document.getElementById('contactForm');
     const contactSuccess = document.getElementById('contactSuccess');
-
     contactForm.addEventListener('submit', function (event) {
       event.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
-
       const formData = new FormData(contactForm);
-
       fetch(contactForm.action, {
         method: 'POST',
         body: formData,
@@ -135,18 +130,16 @@
       });
     });
   </script>
-  <script>   
+  <script>
     AOS.init({
-        duration: 600, // Animation duration in ms
-        once: true, // Run animation only once
+      duration: 600, // Animation duration in ms
+      once: true, // Run animation only once
     });
-
     window.addEventListener('load', () => {
-        // Always scroll to the top of the page on reload
-        window.scrollTo(0, 0);
+      // Always scroll to the top of the page on reload
+      window.scrollTo(0, 0);
     });
-</script>
-
+  </script>
 </body>
 </html>
 

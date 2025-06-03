@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos - Pristine Cleaning</title>
+    <link href="/src/index.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-blue-50">
+    <!-- Header (identical to index.html) -->
+    <header class="bg-blue-600 py-5 shadow-lg" data-aos="fade-down">
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+      <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-0">
+        <!-- Logo and Company Name -->
+        <div class="flex items-center space-x-3">
+          <img src="/assets/Logo.jpg" alt="Pristine Cleaning Logo" class="w-16 h-16 object-cover rounded-full border-2 border-white">
+          <span class="text-white text-2xl sm:text-3xl font-extrabold leading-tight">Pristine<br>Cleaning</span>
+        </div>
+        <!-- Navigation + Socials (aligned right) -->
+        <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+          <nav id="mobileNav" class="hidden md:flex flex-row text-white text-lg space-x-6 text-center md:text-left">
+            <a href="index.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Home</a>
+            <a href="/about.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">About</a>
+            <a href="/contact.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Contact</a>
+            <a href="before-after-more.html" class="hover:bg-blue-700 py-2 px-4 rounded-md transition-all">Photos</a>
+          </nav>
+          <!-- Social Media Links -->
+          <div class="flex space-x-4 ml-0 md:ml-4">
+            <a href="https://www.tiktok.com/@pristinecleaning_mhk" target="_blank" aria-label="TikTok" class="text-white hover:text-blue-200 text-2xl">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/pristinecleaning.mhk/?igsg=ZWMyaXZ3M2gxbWRI#" target="_blank" aria-label="Instagram" class="text-white hover:text-blue-200 text-2xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Mobile nav toggle -->
+        <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none order-3 md:order-none">
+          ☰
+        </button>
+      </div>
+    </header>
+    <script>
+      // Toggle mobile navigation visibility
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileNav');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    </script>
+    <main class="py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold text-blue-700 mb-8">Photos</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 px-4">
+                <!-- Only real before/after pairs, no placeholders -->
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="50">
+                    <img src="/assets/before1.jpg" alt="Before Window Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Window Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/assets/after1.jpg" alt="After Window Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Window Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="150">
+                    <img src="/assets/before2.jpg" alt="Before Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/assets/after2.jpg" alt="After Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="250">
+                    <img src="/assets/before3.jpg" alt="Before Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="/assets/after3.jpg" alt="After Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="350">
+                    <img src="/assets/before5.jpg" alt="Before Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="/assets/after5.jpg" alt="After Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="450">
+                    <img src="/assets/before7.jpg" alt="Before Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="/assets/after7.jpg" alt="After Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="550">
+                    <img src="/assets/before9.jpg" alt="Before Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">Before Cleaning</p>
+                </div>
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="/assets/after9.jpg" alt="After Cleaning" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <p class="mt-4 text-lg text-gray-600 font-semibold">After Cleaning</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="index.html" class="inline-block bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+    <script>
+        AOS.init({ duration: 600, once: true });
+    </script>
+</body>
+</html>
