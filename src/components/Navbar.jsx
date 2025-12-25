@@ -3,7 +3,7 @@ export default function Navbar() {
     return (
       <header className="bg-primary text-white shadow-md">
         <div className="container mx-auto flex justify-between items-center p-4">
-          <h1 className="text-2xl font-bold">Pristine Cleaning</h1>
+          {/* removed bold site title in navbar */}
           <nav>
             <ul className="flex gap-6">
               <li><a href="#services" className="hover:text-accent">Services</a></li>
