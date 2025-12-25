@@ -1,8 +1,8 @@
 // src/components/Navbar.jsx
 export default function Navbar() {
     return (
-      <header className="bg-primary text-white shadow-md">
-        <div className="container mx-auto flex justify-between items-center p-4">
+      <header className="bg-primary text-white shadow-md h-28 md:h-36">
+        <div className="container mx-auto flex justify-between items-center p-4 h-full">
           {/* removed bold site title in navbar */}
           <nav>
             <ul className="flex gap-6">
