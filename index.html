@@ -19,84 +19,43 @@
         </div>
         <!-- Navigation + Socials (aligned right) -->
         <div class="flex flex-col md:flex-row items-center w-full md:w-auto justify-center md:justify-end">
-          <!-- Mobile nav toggle -->
-          <button id="navToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="md:hidden text-white text-3xl focus:outline-none mb-2">
-            <i class="fas fa-bars"></i>
-          </button>
+          <!-- Desktop social and CTA remain here -->
         </div>
       </div>
     </header>
 
-    <!-- Mobile nav (moved outside header so it overlays correctly regardless of header transforms) -->
-    <nav id="mobileNav" aria-hidden="true" role="navigation" aria-label="Main menu" style="touch-action: pan-y; -webkit-overflow-scrolling: touch;" class="fixed inset-0 z-[9999] bg-blue-800 bg-opacity-95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 text-white text-2xl font-semibold transition-transform transform -translate-x-full md:static md:translate-x-0 md:flex md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:text-lg md:font-normal md:relative md:w-auto md:h-auto overflow-y-auto max-h-screen">
-      <button id="closeNav" aria-label="Close menu" class="absolute top-6 right-8 text-4xl md:hidden focus:outline-none">
-        <i class="fas fa-times"></i>
-      </button>
-      <a href="/index.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Home</a>
-      <a href="/about.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">About</a>
-      <a href="/contact.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Contact</a>
-      <a href="/photos.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Photos</a>
-      <div class="flex space-x-6 justify-center mt-6 md:mt-0">
-        <a href="https://www.tiktok.com/@pristinecleaning_mhk" target="_blank" aria-label="TikTok" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
-          <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://www.instagram.com/pristinecleaning.mhk/?igsg=ZWMyaXZ3M2gxbWRI#" target="_blank" aria-label="Instagram" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
+    <!-- Mobile bottom navigation (compact & always visible on small screens) -->
+    <nav id="mobileBottomNav" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md bg-white rounded-xl shadow-lg md:hidden flex justify-between px-4 py-2 z-50" role="navigation" aria-label="Mobile Navigation">
+      <a href="/index.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="Home">
+        <i class="fas fa-home text-xl"></i>
+        <span class="text-xs">Home</span>
+      </a>
+      <a href="/about.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="About">
+        <i class="fas fa-info-circle text-xl"></i>
+        <span class="text-xs">About</span>
+      </a>
+      <a href="/photos.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="Photos">
+        <i class="fas fa-images text-xl"></i>
+        <span class="text-xs">Photos</span>
+      </a>
+      <a href="/contact.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="Contact">
+        <i class="fas fa-phone text-xl"></i>
+        <span class="text-xs">Contact</span>
+      </a>
     </nav>
 
     <script>
-      // Mobile nav open/close logic (improved for accessibility & mobile usability)
-      const navToggle = document.getElementById('navToggle');
-      const mobileNav = document.getElementById('mobileNav');
-      const closeNav = document.getElementById('closeNav');
-
-      function openNav() {
-        mobileNav.classList.remove('-translate-x-full');
-        mobileNav.setAttribute('aria-hidden', 'false');
-        navToggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('overflow-hidden');
-        if (closeNav) closeNav.focus();
-      }
-
-      function closeNavFunc() {
-        mobileNav.classList.add('-translate-x-full');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-        navToggle.focus();
-      }
-
-      if (navToggle && mobileNav) {
-        navToggle.addEventListener('click', () => {
-          const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-          if (isOpen) closeNavFunc();
-          else openNav();
-        });
-      }
-
-      if (closeNav && mobileNav) {
-        closeNav.addEventListener('click', closeNavFunc);
-      }
-
-      // Close nav on link click (mobile only)
-      document.querySelectorAll('#mobileNav a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth < 768) {
-            closeNavFunc();
+      // Highlight active bottom nav item
+      (function(){
+        const path = window.location.pathname;
+        document.querySelectorAll('#mobileBottomNav a').forEach(a => {
+          const href = a.getAttribute('href');
+          if (href === path || (path === '/' && href === '/index.html')) {
+            a.classList.add('font-semibold');
+            a.setAttribute('aria-current', 'page');
           }
         });
-      });
-
-      // Close on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          if (navToggle.getAttribute('aria-expanded') === 'true') {
-            closeNavFunc();
-          }
-        }
-      });
+      })();
     </script>
 
 
