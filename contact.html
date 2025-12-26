@@ -26,26 +26,29 @@
         <button id="navToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="md:hidden text-white text-3xl focus:outline-none mb-2">
           <i class="fas fa-bars"></i>
         </button>
-        <nav id="mobileNav" aria-hidden="true" role="navigation" aria-label="Main menu" style="touch-action: pan-y; -webkit-overflow-scrolling: touch;" class="fixed top-0 left-0 w-full h-full bg-blue-700 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-6 text-white text-2xl font-semibold transition-transform transform -translate-x-full md:static md:translate-x-0 md:flex md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:text-lg md:font-normal md:relative md:w-auto md:h-auto overflow-y-auto max-h-screen">
-          <button id="closeNav" aria-label="Close menu" class="absolute top-6 right-8 text-4xl md:hidden focus:outline-none">
-            <i class="fas fa-times"></i>
-          </button>
-          <a href="/index.html" class="hover:bg-blue-800 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Home</a>
-          <a href="/about.html" class="hover:bg-blue-800 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">About</a>
-          <a href="/contact.html" class="hover:bg-blue-800 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Contact</a>
-          <a href="/photos.html" class="hover:bg-blue-800 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Photos</a>
-          <div class="flex space-x-6 justify-center mt-6 md:mt-0">
-            <a href="https://www.tiktok.com/@pristinecleaning_mhk" target="_blank" aria-label="TikTok" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/pristinecleaning.mhk/?igsg=ZWMyaXZ3M2gxbWRI#" target="_blank" aria-label="Instagram" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </nav>
       </div>
     </div>
   </header>
+
+  <!-- Mobile nav (moved outside header so it overlays correctly regardless of header transforms) -->
+  <nav id="mobileNav" aria-hidden="true" role="navigation" aria-label="Main menu" style="touch-action: pan-y; -webkit-overflow-scrolling: touch;" class="fixed inset-0 z-[9999] bg-blue-800 bg-opacity-95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 text-white text-2xl font-semibold transition-transform transform -translate-x-full md:static md:translate-x-0 md:flex md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:text-lg md:font-normal md:relative md:w-auto md:h-auto overflow-y-auto max-h-screen">
+    <button id="closeNav" aria-label="Close menu" class="absolute top-6 right-8 text-4xl md:hidden focus:outline-none">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="/index.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Home</a>
+    <a href="/about.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">About</a>
+    <a href="/contact.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Contact</a>
+    <a href="/photos.html" class="hover:bg-blue-900 py-2 px-6 rounded-md transition-all block w-full text-center md:w-auto md:text-left">Photos</a>
+    <div class="flex space-x-6 justify-center mt-6 md:mt-0">
+      <a href="https://www.tiktok.com/@pristinecleaning_mhk" target="_blank" aria-label="TikTok" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/pristinecleaning.mhk/?igsg=ZWMyaXZ3M2gxbWRI#" target="_blank" aria-label="Instagram" class="text-white hover:text-blue-200 text-3xl md:text-2xl">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </nav>
+
   <script>
     // Mobile nav open/close logic (improved for accessibility & mobile usability)
     const navToggle = document.getElementById('navToggle');
