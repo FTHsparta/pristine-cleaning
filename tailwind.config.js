@@ -2,7 +2,6 @@ module.exports = {
     content: [
       "./index.html",
       "./contact.html",
-      "./about.html",
       "./photos.html",
       "./src/**/*.{js,ts,jsx,tsx}",
       "./public/photos.html"

@@ -22,7 +22,6 @@
           <!-- Desktop nav: visible on md+ only, mobile unchanged -->
           <nav class="hidden md:flex items-center space-x-6" aria-label="Desktop Navigation">
             <a href="/index.html" class="text-white hover:underline">Home</a>
-            <a href="/about.html" class="text-white hover:underline">About</a>
             <a href="/photos.html" class="text-white hover:underline">Photos</a>
             <a href="/contact.html" class="text-white hover:underline">Contact</a>
             <a href="#quote-form" class="ml-4 bg-white text-blue-600 px-3 py-2 rounded-lg font-semibold hover:bg-blue-100 transition">Get a Free Quote</a>
@@ -36,10 +35,6 @@
       <a href="/index.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="Home">
         <i class="fas fa-home text-xl"></i>
         <span class="text-xs">Home</span>
-      </a>
-      <a href="/about.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="About">
-        <i class="fas fa-info-circle text-xl"></i>
-        <span class="text-xs">About</span>
       </a>
       <a href="/photos.html" class="flex flex-col items-center justify-center text-blue-700 p-2" aria-label="Photos">
         <i class="fas fa-images text-xl"></i>
@@ -69,7 +64,7 @@
     <section class="relative bg-blue-50 py-20 px-4 text-center overflow-hidden" data-aos="fade-up">
         <div class="container mx-auto">
           <h1 class="text-4xl sm:text-5xl font-bold text-blue-700 leading-tight mb-6">Sparkling Clean, Every Time.</h1>
-          <p class="text-lg text-gray-700 mb-8">Trusted window cleaning and detailing pros in your neighborhood.</p>
+          <p class="text-lg text-gray-700 mb-8">Your friendly neighborhood window cleaners.</p>
           <a href="#quote-form" class="inline-block bg-blue-600 text-white py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition-all">Get Your Free Quote</a>
         </div>
         <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-30 blur-3xl -z-10"></div>
@@ -79,16 +74,23 @@
     <main>
         <!-- Services Section -->
         <section id="services" class="py-20 bg-blue-50" data-aos="fade-up">
-            <div class="container mx-auto text-center">
+            <div class="container mx-auto text-center px-4">
               <h2 class="text-4xl font-bold text-blue-700 mb-12">Our Services</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-4">
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                  <h3 class="text-2xl font-semibold text-blue-600 mb-4">Window Cleaning</h3>
-                  <p class="text-gray-600">Professional window cleaning for homes and businesses. Spotless, streak-free, and fast.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl transform transition-all hover:scale-105" data-aos="fade-up" data-aos-delay="400">
-                  <h3 class="text-2xl font-semibold text-blue-600 mb-4">Snow Removal</h3>
-                  <p class="text-gray-600">Safe, reliable snow removal for driveways, walkways, and sidewalks — cleared promptly after storms.</p>
+              <div class="max-w-3xl mx-auto bg-white p-8 sm:p-10 rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-spray-can-sparkles text-5xl text-blue-600 mb-4" aria-hidden="true"></i>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">Window Cleaning</h3>
+                <p class="text-gray-600">We clean windows for houses and businesses around the neighborhood. No streaks, no mess left behind.</p>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div class="bg-blue-50 p-6 rounded-xl">
+                    <i class="fas fa-house text-3xl text-blue-600 mb-3" aria-hidden="true"></i>
+                    <h4 class="text-xl font-semibold text-blue-700">Homes</h4>
+                    <p class="mt-2 text-gray-600">We'll do your windows so you don't have to.</p>
+                  </div>
+                  <div class="bg-blue-50 p-6 rounded-xl">
+                    <i class="fas fa-building text-3xl text-blue-600 mb-3" aria-hidden="true"></i>
+                    <h4 class="text-xl font-semibold text-blue-700">Businesses</h4>
+                    <p class="mt-2 text-gray-600">Got a storefront or an office? We can do those too.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,22 +99,30 @@
         <!-- Free Quote Section -->
         <section class="text-center py-16 bg-blue-100" data-aos="fade-up" data-aos-delay="100">
             <h2 class="text-3xl font-semibold text-blue-600">Get Your Free Quote</h2>
-            <p class="mt-4 text-lg text-gray-700">Fill out the form to receive a free, no-obligation quote for any of our services.</p>
+            <p class="mt-4 text-lg text-gray-700">Fill out the form below and we'll get back to you with a price. It's free, no strings attached.</p>
             <a href="#quote-form" class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all">Get My Quote</a>
         </section>
         
-        <!-- Reviews Section -->
-        <section id="reviews" class="py-16 bg-white" data-aos="fade-up" data-aos-delay="100">
-            <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-semibold text-blue-600">What Our Clients Say</h2>
-                <div class="mt-8 flex flex-wrap justify-center gap-12">
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg w-full sm:w-80" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-lg text-gray-600">"The best window cleaning service I've ever used! My windows have never looked so clear. Highly recommend!"</p>
-                        <p class="mt-4 text-blue-600 font-semibold">John D.</p>
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="py-16 bg-white" data-aos="fade-up" data-aos-delay="100">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="text-4xl font-semibold text-blue-600">Why Hire Us</h2>
+                <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">We're just a few friends who clean windows around the neighborhood.</p>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-magnifying-glass text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
+                        <h3 class="text-xl font-semibold text-blue-700">We're Careful</h3>
+                        <p class="mt-2 text-gray-600">We take our time and go over every window until there are no streaks.</p>
                     </div>
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg w-full sm:w-80" data-aos="fade-up" data-aos-delay="200">
-                      <p class="text-lg text-gray-600">"Their snow removal crew was prompt and thorough — our driveway was safe and clear the same morning!"</p>
-                      <p class="mt-4 text-blue-600 font-semibold">Sarah L.</p>
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-clock text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
+                        <h3 class="text-xl font-semibold text-blue-700">We Show Up</h3>
+                        <p class="mt-2 text-gray-600">When we say we'll be there, we're there, and we get it done quick.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-comments text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
+                        <h3 class="text-xl font-semibold text-blue-700">Straight Answers</h3>
+                        <p class="mt-2 text-gray-600">Quotes are free and there's no pressure. Ask us anything and we'll tell you straight.</p>
                     </div>
                 </div>
             </div>
@@ -120,8 +130,18 @@
 
         <!-- Before and After Section -->
         <section id="before-after" class="py-16 bg-blue-50" data-aos="fade-up" data-aos-delay="100">
-  <div class="container mx-auto text-center">
+  <div class="container mx-auto text-center px-4">
     <h2 class="text-4xl font-semibold text-blue-600">Before and After</h2>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 max-w-4xl mx-auto">
+      <div class="before-after-item">
+        <img src="assets/before1.jpg" alt="Before Window Cleaning" loading="lazy" class="w-full h-72 sm:h-96 object-cover rounded-lg shadow-lg">
+        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 font-semibold">Before</p>
+      </div>
+      <div class="before-after-item">
+        <img src="assets/after1.jpg" alt="After Window Cleaning" loading="lazy" class="w-full h-72 sm:h-96 object-cover rounded-lg shadow-lg">
+        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 font-semibold">After</p>
+      </div>
+    </div>
     <div class="mt-8">
           <a href="photos.html" class="inline-block bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all">
             See More Before & After Photos
@@ -151,7 +171,6 @@
                         <label for="service" class="block text-sm font-medium text-gray-700">Service Needed</label>
                         <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option>Window Cleaning</option>
-                            <option>Snow Removal</option>
                         </select>
                     </div>
                     <div>
@@ -167,11 +186,17 @@
         
                 <!-- Success Message (hidden by default) -->
                 <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
-                    Thank you! Your request has been sent successfully.
+                    Thanks! We got your request and will get back to you soon.
                 </div>
             </div>
         </section>
-        
+    </main>
+
+    <!-- Footer (extra bottom padding on mobile keeps it clear of the bottom nav) -->
+    <footer class="bg-blue-600 px-5 pt-5 pb-28 md:pb-5 text-white text-center">
+        <p>&copy; 2023 Pristine Cleaning. All rights reserved.</p>
+    </footer>
+
         <script>
             // Select the form and success message
             const form = document.getElementById('quoteForm');
@@ -224,6 +249,8 @@
     });
 
     window.addEventListener('load', () => {
+        // Links like /index.html#quote-form should land on that section, so only reset to the top when there's no #hash
+        if (window.location.hash) return;
         // Delay scrolling to the top to allow the page content to fully load
         setTimeout(() => {
             window.scrollTo(0, 0);
